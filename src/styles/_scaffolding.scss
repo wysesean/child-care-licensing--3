@@ -1,0 +1,75 @@
+// Most basic styles applying to native and top level HTML elements
+
+// Full page height
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+@media print {
+  html,
+  body {
+    height: auto;
+  }
+}
+
+// Typography
+html {
+  font-family: $font-family;
+  font-size: $font-size-normal;
+  line-height: $line-height-normal;
+}
+h1 {
+  font-size: $font-size-headline;
+  font-weight: $font-weight-light;
+}
+h2 {
+  font-size: $font-size-title;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-title;
+}
+h3 {
+  font-size: $font-size-title;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+}
+h4 {
+  font-size: $font-size-large;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+}
+
+.material-icons {
+  font-size: $fixed-height-icon;
+}
+
+// Spacing
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: $spacing-vertical 0;
+}
+
+// webkit focus border
+*:focus {
+  outline: none;
+}
+
+// input resizing
+textarea {
+  resize: vertical;
+}
+
+// underline on hover only
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

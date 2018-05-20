@@ -1,0 +1,99 @@
+@import '~@angular/material/theming';
+// Apply Material core theme
+
+// Component themes
+
+@include mat-core();
+
+$mat-ljapalette: (
+    50 : #e0e8f4,
+    100 : #b3c5e4,
+    200 : #809ed2,
+    300 : #4d77c0,
+    400 : #265ab3,
+    500 : #003da5,
+    600 : #00379d,
+    700 : #002f93,
+    800 : #00278a,
+    900 : #001a79,
+    A100 : #a7b2ff,
+    A200 : #7486ff,
+    A400 : #415aff,
+    A700 : #2744ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+
+
+$primary: mat-palette($mat-ljapalette, 500);
+$accent: mat-palette($mat-light-blue, 600);
+$warn: mat-palette($mat-pink);
+
+$status: (
+  inactive: mat-palette($mat-red),
+  active: mat-palette($mat-green),
+  complete: mat-palette($mat-grey),
+);
+
+$background: (
+  status-bar: map_get($mat-grey, 300),
+  app-bar: map_get($mat-grey, 200),
+  background: map_get($mat-grey, 50),
+  hover: rgba(black, $opacity-hover),
+  card: white,
+  card-alt: rgba(black, 0.04),
+  row-hover: rgba(black, 0.04),
+  dialog: white,
+  disabled-button: rgba(black, $opacity-disabled),
+  raised-button: map_get($mat-grey, 200),
+  focused-button: rgba(black, $opacity-focus),
+  selected-button: map_get($mat-grey, 300),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle: map_get($mat-grey, 200),
+  unselected-chip: map_get($mat-grey, 100),
+  disabled-list-option: map_get($mat-grey, 200),
+  banner: map_get($mat-grey, 200),
+  loading-bar: map_get($mat-grey, 100)
+);
+
+$foreground: (
+  base: black,
+  divider: rgba(black, $opacity-divider),
+  dividers: rgba(black, $opacity-divider),
+  disabled: rgba(black, $opacity-disabled),
+  disabled-button: rgba(black, $opacity-disabled),
+  disabled-text: rgba(black, $opacity-disabled),
+  hint-text: rgba(black, $opacity-disabled),
+  secondary-text: rgba(black, $opacity-secondary),
+  icon: rgba(black, $opacity-secondary),
+  icons: rgba(black, $opacity-secondary),
+  text: rgba(black, $opacity-primary),
+  slider-min: rgba(black, $opacity-secondary),
+  slider-off: rgba(black, $opacity-disabled),
+  slider-off-active: rgba(black, $opacity-disabled + 0.1),
+);
+
+$theme: (
+  primary: $primary,
+  accent: $accent,
+  warn: $warn,
+  background: $background,
+  foreground: $foreground,
+);
+
+@include angular-material-theme($theme);

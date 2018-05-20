@@ -1,0 +1,44 @@
+<mat-accordion>
+  <mat-expansion-panel class="mat-elevation-z0" hideToggle="true" [expanded]="panelOpened" disabled>
+    <mat-expansion-panel-header collapsedHeight="48px" expandedHeight="48px">
+      <mat-panel-title>
+        <mat-icon>search</mat-icon>
+        <input (change)="textSearch.emit($event.target.value)" class="search" placeholder="Search by Name" />
+        <button (click)="toggleSearchPanel()" mat-icon-button>
+          <mat-icon>filter_list</mat-icon>
+        </button>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form class="expansion-content" [formGroup]="formGroup" novalidate>
+      <mat-form-field color="primary">
+        <mat-select placeholder="Operation Type" formControlName="operationType">
+          <mat-option *ngFor="let typeOption of typeOptions" [value]="typeOption">
+            {{ typeOption }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field color="primary">
+        <mat-select placeholder="Treatment Offered" formControlName="services">
+          <mat-option *ngFor="let serviceOption of servicesOptions" [value]="serviceOption">
+            {{ serviceOption }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field color="primary">
+        <mat-select placeholder="Programs Offered" formControlName="programs">
+          <mat-option *ngFor="let programOption of programsOptions" [value]="programOption">
+            {{ programOption }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field color="primary">
+        <mat-select placeholder="Ages" formControlName="ages">
+          <mat-option *ngFor="let ageOption of agesOptions" [value]="ageOption">
+            {{ ageOption }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="button" (click)="submitFilter()">Filter</button>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>

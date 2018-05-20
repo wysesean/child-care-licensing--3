@@ -1,0 +1,15 @@
+@import 'component-imports';
+
+:host {
+  display: block;
+  background-color: rgba(0,0,0, 0.2);
+  &,
+  &.divider-minor {
+    flex: 0 0 $fixed-height-divider-minor;
+    min-height: $fixed-height-divider-minor;
+  }
+  &.divider-major {
+    flex: 0 0 $fixed-height-divider-major;
+    min-height: $fixed-height-divider-major;
+  }
+}

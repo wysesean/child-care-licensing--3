@@ -1,0 +1,27 @@
+:host {
+  overflow-y: scroll;
+  .actions {
+    display: flex;
+  }
+  .mat-card-title {
+    text-align: center;
+  }
+  .right {
+    margin-left: auto;
+  }
+  .mat-card-subtitle {
+    text-align: center;
+  }
+  p {
+    display: flex;
+
+    span {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+  .divider {
+    height: 1px;
+    background: rgba(0, 0, 0, .2);
+  }
+}

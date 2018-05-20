@@ -1,0 +1,9 @@
+<a [routerLink]="['/details', operation.operation_id]">
+  <mat-card class="mat-elevation-z0">
+    <mat-card-title>{{operation.operation_name}}</mat-card-title>
+    <mat-card-subtitle>
+      <p>{{operation.location_address | capitalize}}</p>
+    </mat-card-subtitle>
+  </mat-card>
+  <app-divider></app-divider>
+</a>

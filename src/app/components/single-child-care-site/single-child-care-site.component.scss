@@ -1,0 +1,28 @@
+@import 'component-imports';
+ :host {
+   cursor: pointer;
+   a {
+     text-decoration: none;
+   }
+   .mat-card {
+     display: flex;
+     flex-direction: column;
+     padding: 12px 24px 12px 8px;
+     .mat-icon-button {
+      margin-right: 8px;
+     }
+     .mat-card-title {
+       font-size: 14px;
+       margin-bottom: 8px;
+     }
+     .mat-card-subtitle {
+       margin-bottom: 0;
+       p {
+         margin: 0;
+       }
+     }
+     &:hover {
+      background: rgba(0,0,0,0.1);
+     }
+   }
+ }

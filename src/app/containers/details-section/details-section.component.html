@@ -1,0 +1,33 @@
+<div class="actions">
+  <a [routerLink]="['/search']">
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </a>
+  <button mat-icon-button class="right" (click)="geolocate()">
+    <mat-icon>my_location</mat-icon>
+  </button>
+</div>
+<mat-card class="mat-elevation-z0">
+  <mat-card-title>
+    {{(operations$ | async)?.operation_name}}
+  </mat-card-title>
+  <mat-card-subtitle>
+     {{(operations$ | async)?.location_address}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <p>Operation Number: <span>{{(operations$ | async)?.operation_number}}</span></p>
+    <p>Director: <span>{{(operations$ | async)?.administrator_director_name}}</span></p>
+    <p>Programs Provided: <span>{{(operations$ | async)?.programs_provided}}</span></p>
+    <p>Days of Operation: <span>{{(operations$ | async)?.days_of_operation}}</span></p>
+    <p>Hours of Operation: <span>{{(operations$ | async)?.hours_of_operation}}</span></p>
+    <h3>Violations</h3>
+    <div class="divider"></div>
+    <ng-container *ngFor="let violation of (nonCompliance$ | async)">
+      <p>Violation Date: <span>{{violation.date_correction_verified | date:short}} </span></p>
+      <p>Description:</p>
+      <p>{{violation.narrative}}</p>
+      <div class="divider"></div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,15 @@
+@import 'component-imports';
+
+:host {
+  display: block;
+  height: $fixed-height-progress-bar;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+}
+
+.hide {
+  opacity: 0;
+}

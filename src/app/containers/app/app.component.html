@@ -1,0 +1,6 @@
+<app-loading-bar [showLoading]="isLoading$ | async"></app-loading-bar>
+<div class="side-panel">
+  <app-tool-bar></app-tool-bar>
+  <router-outlet></router-outlet>
+</div>
+<div appMap  [filteredIds]="filteredIds | async"  [mapControls]="mapControls" (featureClick)="onFeatureClick($event)"></div>
